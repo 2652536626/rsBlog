@@ -1,0 +1,1044 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Rspress v1.22.0"><title data-rh="true">day04 - Rspress</title><meta data-rh="true" name="description" content="Rspack-based Static Site Generator"/><script>{const e=localStorage.getItem("rspress-theme-appearance"),t=window.matchMedia("(prefers-color-scheme: dark)").matches,a=e&&"auto"!==e?"dark"===e:t;document.documentElement.classList.toggle("dark",a),document.documentElement.style.colorScheme=a?"dark":"light"}</script><title>Rspress</title><link rel="icon" href="/rspress-icon.png"><script defer="defer" src="/static/js/styles.7908e858.js"></script><script defer="defer" src="/static/js/lib-lodash.5d5f57e4.js"></script><script defer="defer" src="/static/js/lib-polyfill.5b45af03.js"></script><script defer="defer" src="/static/js/lib-react.5f341d70.js"></script><script defer="defer" src="/static/js/lib-router.aa2fc038.js"></script><script defer="defer" src="/static/js/index.0c5f5228.js"></script><link href="/static/css/styles.8aadd70d.css" rel="stylesheet"></head><body ><div id="root"><div><div class="navContainer_f6cde rspress-nav px-6 " style="position:sticky"><div class="container_f6cde flex justify-between items-center h-full"><div class="navBarTitle_f6cde"><a href="/" class="flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><img src="/rspress-light-logo.png" alt="logo" id="logo" class="mr-4 rspress-logo dark:hidden"/><img src="/rspress-dark-logo.png" alt="logo" id="logo" class="mr-4 rspress-logo hidden dark:block"/></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_f6cde"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_6e282"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9Z"></path></svg><p class="searchWord_6e282">Search Docs</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_6e282"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9Z"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a class="link_03735  cursor-pointer" target="" href="/index.html"><div class="rspress-nav-menu-item singleItem_f6cde  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Home</div></a><a class="link_03735  cursor-pointer" target="" href="/guide/index.html"><div class="rspress-nav-menu-item singleItem_f6cde  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Guide</div></a><a class="link_03735  cursor-pointer" target="" href="/vue/index.html"><div class="rspress-nav-menu-item singleItem_f6cde activeItem_f6cde text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Vue</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3zM19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3zM3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1zM23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1zM4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3zM18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5.2.3.2.8-.1 1.1-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2zM9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2z"></path></svg></div></div></div></div></div><div class="mobileNavMenu_f6cde"><div class="navScreen_457e8 " id="navScreen"><div class="container_457e8"><div class="navMenu_457e8"><div class="navMenuItem_457e8 w-full"><a class="link_03735  cursor-pointer" target="" href="/index.html"><div class="rspress-nav-menu-item singleItem_f6cde  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Home</div></a></div><div class="navMenuItem_457e8 w-full"><a class="link_03735  cursor-pointer" target="" href="/guide/index.html"><div class="rspress-nav-menu-item singleItem_f6cde  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Guide</div></a></div><div class="navMenuItem_457e8 w-full"><a class="link_03735  cursor-pointer" target="" href="/vue/index.html"><div class="rspress-nav-menu-item singleItem_f6cde activeItem_f6cde text-sm font-medium mx-1.5 px-3 py-2 flex items-center">Vue</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_457e8 flex justify-center"></div></div></div></div><button aria-label="mobile hamburger" class=" navHamburger_e7b06 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_edeb4 pt-0"><div class="rspress-sidebar-menu"><button class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button class="flex-center ml-auto"><span class="text-sm">ON THIS PAGE</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button></div><aside class="sidebar_71eca rspress-sidebar "><div class="navTitleMask_71eca"><div class="navBarTitle_f6cde"><a href="/" class="flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><img src="/rspress-light-logo.png" alt="logo" id="logo" class="mr-4 rspress-logo dark:hidden"/><img src="/rspress-dark-logo.png" alt="logo" id="logo" class="mr-4 rspress-logo hidden dark:block"/></a></div></div><div class="rspress-scrollbar sidebarContent_71eca"><nav class="pb-2"><section class="mt-0.5 block" style="margin-left:0"><div class="flex justify-between items-center menuItem_71eca" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center">Advanced</span></h2><div class="collapseContainer_71eca p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:1;margin-left:12px"><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day01/day01.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day01</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day02/day02.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day02</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day03/day03.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day03</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day04/day04.html"><div class="menuItemActive_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day04</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day05/day05.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day05</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day06/day06.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>day06</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day07/day07.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Vuex 概述</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day08-day10-智慧商城项目/智慧商城项目.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>智慧商城</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day11-Vue3入门/Vue3入门.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>认识Vue3</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day12-Pinia/Pinia.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Vue3 状态管理 - Pinia</span></div></a></div><div><a class="link_03735 menuLink_71eca cursor-pointer" target="" href="/vue/day12-day14-大事件管理系统/大事件管理系统.html"><div class="menuItem_71eca mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>后台数据管理系统 - 项目架构设计</span></div></a></div></div></div></section></nav></div></aside><div class="content_edeb4 rspress-doc-container flex flex-shrink-0 mx-auto"><div class="w-full flex-1"><div><div class="rspress-doc"><!--$--><h1 id="day04" class="text-3xl mb-10 leading-10 tracking-tight title_3b154">day04<a class="link_3b154 header-anchor" aria-hidden="true" href="#day04">#</a></h1>
+<h2 id="一学习目标" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">一、学习目标<a class="link_3b154 header-anchor" aria-hidden="true" href="#一学习目标">#</a></h2>
+<h3 id="1组件的三大组成部分结构样式逻辑" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.组件的三大组成部分（结构/样式/逻辑）<a class="link_3b154 header-anchor" aria-hidden="true" href="#1组件的三大组成部分结构样式逻辑">#</a></h3>
+<p class="my-4 leading-7">​    scoped解决样式冲突/data是一个函数</p>
+<h3 id="2组件通信" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.组件通信<a class="link_3b154 header-anchor" aria-hidden="true" href="#2组件通信">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">组件通信语法</li>
+<li class="[&amp;:not(:first-child)]:mt-2">父传子</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子传父</li>
+<li class="[&amp;:not(:first-child)]:mt-2">非父子通信（扩展）</li>
+</ol>
+<h3 id="3综合案例小黑记事本组件版" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.综合案例：小黑记事本（组件版）<a class="link_3b154 header-anchor" aria-hidden="true" href="#3综合案例小黑记事本组件版">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">拆分组件</li>
+<li class="[&amp;:not(:first-child)]:mt-2">列表渲染</li>
+<li class="[&amp;:not(:first-child)]:mt-2">数据添加</li>
+<li class="[&amp;:not(:first-child)]:mt-2">数据删除</li>
+<li class="[&amp;:not(:first-child)]:mt-2">列表统计</li>
+<li class="[&amp;:not(:first-child)]:mt-2">清空</li>
+<li class="[&amp;:not(:first-child)]:mt-2">持久化</li>
+</ol>
+<h3 id="4进阶语法" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.进阶语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#4进阶语法">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">v-model原理</li>
+<li class="[&amp;:not(:first-child)]:mt-2">v-model应用于组件</li>
+<li class="[&amp;:not(:first-child)]:mt-2">sync修饰符</li>
+<li class="[&amp;:not(:first-child)]:mt-2">ref和$refs</li>
+<li class="[&amp;:not(:first-child)]:mt-2">$nextTick</li>
+</ol>
+<h2 id="二scoped解决样式冲突" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">二、scoped解决样式冲突<a class="link_3b154 header-anchor" aria-hidden="true" href="#二scoped解决样式冲突">#</a></h2>
+<h3 id="" class="mt-10 mb-2 leading-7 text-xl title_3b154"><strong class="font-semibold">1.默认情况</strong><a class="link_3b154 header-anchor" aria-hidden="true" href="#">#</a></h3>
+<p class="my-4 leading-7">写在组件中的样式会 <strong class="font-semibold">全局生效</strong> →  因此很容易造成多个组件之间的样式冲突问题。</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7"><strong class="font-semibold">全局样式</strong>: 默认组件中的样式会作用到全局，任何一个组件中都会受到此样式的影响</p>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7"><strong class="font-semibold">局部样式</strong>: 可以给组件加上<strong class="font-semibold">scoped</strong> 属性,可以<strong class="font-semibold">让样式只作用于当前组件</strong></p>
+</li>
+</ol>
+<h3 id="2代码演示" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#2代码演示">#</a></h3>
+<p class="my-4 leading-7">BaseOne.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-one&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    BaseOne
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseTwo.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-one&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    BaseTwo
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div id=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseOne&gt;&lt;/BaseOne&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseTwo&gt;&lt;/BaseTwo&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseOne from &#x27;./components/BaseOne&#x27;
+</span><span style="display:block;padding:0 1.25rem">import BaseTwo from &#x27;./components/BaseTwo&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  name: &#x27;App&#x27;,
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    BaseOne,
+</span><span style="display:block;padding:0 1.25rem">    BaseTwo
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="3scoped原理" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.scoped原理<a class="link_3b154 header-anchor" aria-hidden="true" href="#3scoped原理">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">当前组件内标签都被添加<strong class="font-semibold">data-v-hash值</strong> 的属性</li>
+<li class="[&amp;:not(:first-child)]:mt-2">css选择器都被添加 [<strong class="font-semibold">data-v-hash值</strong>] 的属性选择器</li>
+</ol>
+<p class="my-4 leading-7">最终效果: <strong class="font-semibold">必须是当前组件的元素</strong>, 才会有这个自定义属性, 才会被这个样式作用到</p>
+<p class="my-4 leading-7"><img src="/static/image/1682306517375.24ec7e32.png" alt="68230651737"/></p>
+<h3 id="4总结" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.总结<a class="link_3b154 header-anchor" aria-hidden="true" href="#4总结">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">style的默认样式是作用到哪里的？</li>
+<li class="[&amp;:not(:first-child)]:mt-2">scoped的作用是什么？</li>
+<li class="[&amp;:not(:first-child)]:mt-2">style中推不推荐加scoped？</li>
+</ol>
+<h2 id="三data必须是一个函数" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">三、data必须是一个函数<a class="link_3b154 header-anchor" aria-hidden="true" href="#三data必须是一个函数">#</a></h2>
+<h3 id="1data为什么要写成函数" class="mt-10 mb-2 leading-7 text-xl title_3b154">1、data为什么要写成函数<a class="link_3b154 header-anchor" aria-hidden="true" href="#1data为什么要写成函数">#</a></h3>
+<p class="my-4 leading-7">一个组件的 <strong class="font-semibold">data</strong> 选项必须<strong class="font-semibold">是一个函数</strong>。目的是为了：保证每个组件实例，维护<strong class="font-semibold">独立</strong>的一份<strong class="font-semibold">数据</strong>对象。</p>
+<p class="my-4 leading-7">每次创建新的组件实例，都会新<strong class="font-semibold">执行一次data 函数</strong>，得到一个新对象。</p>
+<p class="my-4 leading-7"><img src="/static/image/1682306952078.c47e851f.png" alt="68230695207"/></p>
+<h3 id="2代码演示-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#2代码演示-1">#</a></h3>
+<p class="my-4 leading-7">BaseCount.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-count&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button @click=&quot;count--&quot;&gt;-&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;span&gt;{{ count }}&lt;/span&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button @click=&quot;count--&quot;&gt;-&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data: function () {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      count: 100,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-count {
+</span><span style="display:block;padding:0 1.25rem">  margin: 20px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseCount&gt;&lt;/BaseCount&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseCount from &#x27;./components/BaseCount&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    BaseCount,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="3总结" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.总结<a class="link_3b154 header-anchor" aria-hidden="true" href="#3总结">#</a></h3>
+<p class="my-4 leading-7">data写成函数的目的是什么？</p>
+<h2 id="四组件通信" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">四、组件通信<a class="link_3b154 header-anchor" aria-hidden="true" href="#四组件通信">#</a></h2>
+<h3 id="1什么是组件通信" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.什么是组件通信？<a class="link_3b154 header-anchor" aria-hidden="true" href="#1什么是组件通信">#</a></h3>
+<p class="my-4 leading-7">组件通信，就是指<strong class="font-semibold">组件与组件</strong>之间的<strong class="font-semibold">数据传递</strong></p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">组件的数据是独立的，无法直接访问其他组件的数据。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">想使用其他组件的数据，就需要组件通信</li>
+</ul>
+<h3 id="2组件之间如何通信" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.组件之间如何通信<a class="link_3b154 header-anchor" aria-hidden="true" href="#2组件之间如何通信">#</a></h3>
+<p class="my-4 leading-7"><img src="/static/image/1682308903094.738bd861.png" alt="68230890309"/></p>
+<p class="my-4 leading-7">思考：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">组件之间有哪些关系？</li>
+<li class="[&amp;:not(:first-child)]:mt-2">对应的组件通信方案有哪几类？</li>
+</ol>
+<h3 id="3组件关系分类" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.组件关系分类<a class="link_3b154 header-anchor" aria-hidden="true" href="#3组件关系分类">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">父子关系</li>
+<li class="[&amp;:not(:first-child)]:mt-2">非父子关系</li>
+</ol>
+<p class="my-4 leading-7"><img src="/static/image/1682318073803.8b6121f6.png" alt="68231807380"/></p>
+<h3 id="4通信解决方案" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.通信解决方案<a class="link_3b154 header-anchor" aria-hidden="true" href="#4通信解决方案">#</a></h3>
+<p class="my-4 leading-7"><img src="/static/image/1682318111090.f2987c5f.png" alt="68231811109"/></p>
+<h3 id="5父子通信流程" class="mt-10 mb-2 leading-7 text-xl title_3b154">5.父子通信流程<a class="link_3b154 header-anchor" aria-hidden="true" href="#5父子通信流程">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">父组件通过 <strong class="font-semibold">props</strong> 将数据传递给子组件</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子组件利用 <strong class="font-semibold">$emit</strong> 通知父组件修改更新</li>
+</ol>
+<p class="my-4 leading-7"><img src="/static/image/1682318444566.af383986.png" alt="68231844456"/></p>
+<h3 id="6父向子通信代码示例" class="mt-10 mb-2 leading-7 text-xl title_3b154">6.父向子通信代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#6父向子通信代码示例">#</a></h3>
+<p class="my-4 leading-7">父组件通过<strong class="font-semibold">props</strong>将数据传递给子组件</p>
+<p class="my-4 leading-7">父组件App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot; style=&quot;border: 3px solid #000; margin: 10px&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    我是APP组件 
+</span><span style="display:block;padding:0 1.25rem">    &lt;Son&gt;&lt;/Son&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import Son from &#x27;./components/Son.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  name: &#x27;App&#x27;,
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      myTitle: &#x27;学前端，就来黑马程序员&#x27;,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    Son,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">子组件Son.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;son&quot; style=&quot;border:3px solid #000;margin:10px&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    我是Son组件
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  name: &#x27;Son-Child&#x27;,
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7"><img src="/static/image/1682318711785.8d630f56.png" alt="68231871178"/></p>
+<p class="my-4 leading-7">父向子传值步骤</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">给子组件以添加属性的方式传值</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子组件内部通过props接收</li>
+<li class="[&amp;:not(:first-child)]:mt-2">模板中直接使用 props接收的值</li>
+</ol>
+<h3 id="7子向父通信代码示例" class="mt-10 mb-2 leading-7 text-xl title_3b154">7.子向父通信代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#7子向父通信代码示例">#</a></h3>
+<p class="my-4 leading-7">子组件利用 <strong class="font-semibold">$emit</strong> 通知父组件，进行修改更新</p>
+<p class="my-4 leading-7"><img src="/static/image/1682318965635.8ec4a587.png" alt="68231896563"/></p>
+<p class="my-4 leading-7">子向父传值步骤</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">$emit触发事件，给父组件发送消息通知</li>
+<li class="[&amp;:not(:first-child)]:mt-2">父组件监听$emit触发的事件</li>
+<li class="[&amp;:not(:first-child)]:mt-2">提供处理函数，在函数的性参中获取传过来的参数</li>
+</ol>
+<h3 id="8总结" class="mt-10 mb-2 leading-7 text-xl title_3b154">8.总结<a class="link_3b154 header-anchor" aria-hidden="true" href="#8总结">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">组件关系分类有哪两种</li>
+<li class="[&amp;:not(:first-child)]:mt-2">父子组件通信的流程是什么？<!-- -->
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">父向子</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子向父</li>
+</ol>
+</li>
+</ol>
+<h2 id="五什么是props" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">五、什么是props<a class="link_3b154 header-anchor" aria-hidden="true" href="#五什么是props">#</a></h2>
+<h3 id="1props-定义" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.Props 定义<a class="link_3b154 header-anchor" aria-hidden="true" href="#1props-定义">#</a></h3>
+<p class="my-4 leading-7">组件上 注册的一些  自定义属性</p>
+<h3 id="2props-作用" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.Props 作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#2props-作用">#</a></h3>
+<p class="my-4 leading-7">向子组件传递数据</p>
+<h3 id="3特点" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.特点<a class="link_3b154 header-anchor" aria-hidden="true" href="#3特点">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">可以 传递 <strong class="font-semibold">任意数量</strong> 的prop</li>
+<li class="[&amp;:not(:first-child)]:mt-2">可以 传递 <strong class="font-semibold">任意类型</strong> 的prop</li>
+</ol>
+<p class="my-4 leading-7"><img src="/static/image/1682320156914.fb1a1322.png" alt="68232015691"/></p>
+<h3 id="4代码演示" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#4代码演示">#</a></h3>
+<p class="my-4 leading-7">父组件App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;UserInfo
+</span><span style="display:block;padding:0 1.25rem">      :username=&quot;username&quot;
+</span><span style="display:block;padding:0 1.25rem">      :age=&quot;age&quot;
+</span><span style="display:block;padding:0 1.25rem">      :isSingle=&quot;isSingle&quot;
+</span><span style="display:block;padding:0 1.25rem">      :car=&quot;car&quot;
+</span><span style="display:block;padding:0 1.25rem">      :hobby=&quot;hobby&quot;
+</span><span style="display:block;padding:0 1.25rem">    &gt;&lt;/UserInfo&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import UserInfo from &#x27;./components/UserInfo.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      username: &#x27;小帅&#x27;,
+</span><span style="display:block;padding:0 1.25rem">      age: 28,
+</span><span style="display:block;padding:0 1.25rem">      isSingle: true,
+</span><span style="display:block;padding:0 1.25rem">      car: {
+</span><span style="display:block;padding:0 1.25rem">        brand: &#x27;宝马&#x27;,
+</span><span style="display:block;padding:0 1.25rem">      },
+</span><span style="display:block;padding:0 1.25rem">      hobby: [&#x27;篮球&#x27;, &#x27;足球&#x27;, &#x27;羽毛球&#x27;],
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    UserInfo,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">子组件UserInfo.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;userinfo&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;h3&gt;我是个人信息组件&lt;/h3&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;姓名：&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;年龄：&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;是否单身：&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;座驾：&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;兴趣爱好：&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">.userinfo {
+</span><span style="display:block;padding:0 1.25rem">  width: 300px;
+</span><span style="display:block;padding:0 1.25rem">  border: 3px solid #000;
+</span><span style="display:block;padding:0 1.25rem">  padding: 20px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.userinfo &gt; div {
+</span><span style="display:block;padding:0 1.25rem">  margin: 20px 10px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h2 id="六props校验" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">六、props校验<a class="link_3b154 header-anchor" aria-hidden="true" href="#六props校验">#</a></h2>
+<h3 id="1思考" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.思考<a class="link_3b154 header-anchor" aria-hidden="true" href="#1思考">#</a></h3>
+<p class="my-4 leading-7">组件的props可以乱传吗</p>
+<h3 id="2作用" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#2作用">#</a></h3>
+<p class="my-4 leading-7">为组件的 prop 指定<strong class="font-semibold">验证要求</strong>，不符合要求，控制台就会有<strong class="font-semibold">错误提示</strong>  → 帮助开发者，快速发现错误</p>
+<h3 id="3语法" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#3语法">#</a></h3>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">类型校验</strong></li>
+<li class="[&amp;:not(:first-child)]:mt-2">非空校验</li>
+<li class="[&amp;:not(:first-child)]:mt-2">默认值</li>
+<li class="[&amp;:not(:first-child)]:mt-2">自定义校验</li>
+</ul>
+<p class="my-4 leading-7"><img src="/static/image/1682320684053.218c48a3.png" alt="68232068405"/></p>
+<h3 id="4代码演示-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#4代码演示-1">#</a></h3>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseProgress :w=&quot;width&quot;&gt;&lt;/BaseProgress&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseProgress from &#x27;./components/BaseProgress.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      width: 30,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    BaseProgress,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseProgress.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-progress&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div class=&quot;inner&quot; :style=&quot;{ width: w - &#x27;%&#x27; }&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;span&gt;{{ w }}%&lt;/span&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  props: [&#x27;w&#x27;],
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-progress {
+</span><span style="display:block;padding:0 1.25rem">  height: 26px;
+</span><span style="display:block;padding:0 1.25rem">  width: 400px;
+</span><span style="display:block;padding:0 1.25rem">  border-radius: 15px;
+</span><span style="display:block;padding:0 1.25rem">  background-color: #272425;
+</span><span style="display:block;padding:0 1.25rem">  border: 3px solid #272425;
+</span><span style="display:block;padding:0 1.25rem">  box-sizing: border-box;
+</span><span style="display:block;padding:0 1.25rem">  margin-bottom: 30px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.inner {
+</span><span style="display:block;padding:0 1.25rem">  position: relative;
+</span><span style="display:block;padding:0 1.25rem">  background: #379bff;
+</span><span style="display:block;padding:0 1.25rem">  border-radius: 15px;
+</span><span style="display:block;padding:0 1.25rem">  height: 25px;
+</span><span style="display:block;padding:0 1.25rem">  box-sizing: border-box;
+</span><span style="display:block;padding:0 1.25rem">  left: -3px;
+</span><span style="display:block;padding:0 1.25rem">  top: -2px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.inner span {
+</span><span style="display:block;padding:0 1.25rem">  position: absolute;
+</span><span style="display:block;padding:0 1.25rem">  right: 0;
+</span><span style="display:block;padding:0 1.25rem">  top: 26px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h2 id="七props校验完整写法" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">七、props校验完整写法<a class="link_3b154 header-anchor" aria-hidden="true" href="#七props校验完整写法">#</a></h2>
+<h3 id="1语法" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#1语法">#</a></h3>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>props: {
+</span></span><span style="display:block;padding:0 1.25rem">  校验的属性名: {
+</span><span style="display:block;padding:0 1.25rem">    type: 类型,  // Number String Boolean ...
+</span><span style="display:block;padding:0 1.25rem">    required: true, // 是否必填
+</span><span style="display:block;padding:0 1.25rem">    default: 默认值, // 默认值
+</span><span style="display:block;padding:0 1.25rem">    validator (value) {
+</span><span style="display:block;padding:0 1.25rem">      // 自定义校验逻辑
+</span><span style="display:block;padding:0 1.25rem">      return 是否通过校验
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">},</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="2代码实例" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.代码实例<a class="link_3b154 header-anchor" aria-hidden="true" href="#2代码实例">#</a></h3>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;script&gt;
+</span></span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  // 完整写法（类型、默认值、非空、自定义校验）
+</span><span style="display:block;padding:0 1.25rem">  props: {
+</span><span style="display:block;padding:0 1.25rem">    w: {
+</span><span style="display:block;padding:0 1.25rem">      type: Number,
+</span><span style="display:block;padding:0 1.25rem">      //required: true,
+</span><span style="display:block;padding:0 1.25rem">      default: 0,
+</span><span style="display:block;padding:0 1.25rem">      validator(val) {
+</span><span style="display:block;padding:0 1.25rem">        // console.log(val)
+</span><span style="display:block;padding:0 1.25rem">        if (val &gt;= 100 || val &lt;= 0) {
+</span><span style="display:block;padding:0 1.25rem">          console.error(&#x27;传入的范围必须是0-100之间&#x27;)
+</span><span style="display:block;padding:0 1.25rem">          return false
+</span><span style="display:block;padding:0 1.25rem">        } else {
+</span><span style="display:block;padding:0 1.25rem">          return true
+</span><span style="display:block;padding:0 1.25rem">        }
+</span><span style="display:block;padding:0 1.25rem">      },
+</span><span style="display:block;padding:0 1.25rem">    },
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="3注意" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.注意<a class="link_3b154 header-anchor" aria-hidden="true" href="#3注意">#</a></h3>
+<p class="my-4 leading-7">1.default和required一般不同时写（因为当时必填项时，肯定是有值的）</p>
+<p class="my-4 leading-7">2.default后面如果是简单类型的值，可以直接写默认。如果是复杂类型的值，则需要以函数的形式return一个默认值</p>
+<h2 id="八propsdata单向数据流" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">八、props&amp;data、单向数据流<a class="link_3b154 header-anchor" aria-hidden="true" href="#八propsdata单向数据流">#</a></h2>
+<h3 id="1共同点" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.共同点<a class="link_3b154 header-anchor" aria-hidden="true" href="#1共同点">#</a></h3>
+<p class="my-4 leading-7">都可以给组件提供数据</p>
+<h3 id="2区别" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.区别<a class="link_3b154 header-anchor" aria-hidden="true" href="#2区别">#</a></h3>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">data 的数据是<strong class="font-semibold">自己</strong>的  →   随便改</li>
+<li class="[&amp;:not(:first-child)]:mt-2">prop 的数据是<strong class="font-semibold">外部</strong>的  →   不能直接改，要遵循 <strong class="font-semibold">单向数据流</strong></li>
+</ul>
+<h3 id="3单向数据流" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.单向数据流<a class="link_3b154 header-anchor" aria-hidden="true" href="#3单向数据流">#</a></h3>
+<p class="my-4 leading-7">父级props 的数据更新，会向下流动，影响子组件。这个数据流动是单向的</p>
+<h3 id="4代码演示-2" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#4代码演示-2">#</a></h3>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseCount&gt;&lt;/BaseCount&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseCount from &#x27;./components/BaseCount.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  components:{
+</span><span style="display:block;padding:0 1.25rem">    BaseCount
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  data(){
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseCount.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-count&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button @click=&quot;count--&quot;&gt;-&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;span&gt;{{ count }}&lt;/span&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button @click=&quot;count--&quot;&gt;-&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  // 1.自己的数据随便修改  （谁的数据 谁负责）
+</span><span style="display:block;padding:0 1.25rem">   data () {
+</span><span style="display:block;padding:0 1.25rem">     return {
+</span><span style="display:block;padding:0 1.25rem">       count: 100,
+</span><span style="display:block;padding:0 1.25rem">     }
+</span><span style="display:block;padding:0 1.25rem">   },
+</span><span style="display:block;padding:0 1.25rem">  // 2.外部传过来的数据 不能随便修改
+</span><span style="display:block;padding:0 1.25rem">  //props: {
+</span><span style="display:block;padding:0 1.25rem">  //  count: {
+</span><span style="display:block;padding:0 1.25rem">  //    type: Number,
+</span><span style="display:block;padding:0 1.25rem">  //  }, 
+</span><span style="display:block;padding:0 1.25rem">  //}
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-count {
+</span><span style="display:block;padding:0 1.25rem">  margin: 20px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7"><img src="/static/image/1682323734228.9bdd1c8d.png" alt="68232373422"/></p>
+<h3 id="5口诀" class="mt-10 mb-2 leading-7 text-xl title_3b154">5.口诀<a class="link_3b154 header-anchor" aria-hidden="true" href="#5口诀">#</a></h3>
+<h4 id="谁的数据谁负责" class="mt-8 leading-6 text-base title_3b154">谁的数据谁负责<a class="link_3b154 header-anchor" aria-hidden="true" href="#谁的数据谁负责">#</a></h4>
+<h2 id="九综合案例-组件拆分" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">九、综合案例-组件拆分<a class="link_3b154 header-anchor" aria-hidden="true" href="#九综合案例-组件拆分">#</a></h2>
+<h3 id="1需求说明" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.需求说明<a class="link_3b154 header-anchor" aria-hidden="true" href="#1需求说明">#</a></h3>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">拆分基础组件</li>
+<li class="[&amp;:not(:first-child)]:mt-2">渲染待办任务</li>
+<li class="[&amp;:not(:first-child)]:mt-2">添加任务</li>
+<li class="[&amp;:not(:first-child)]:mt-2">删除任务</li>
+<li class="[&amp;:not(:first-child)]:mt-2">底部合计 和 清空功能</li>
+<li class="[&amp;:not(:first-child)]:mt-2">持久化存储</li>
+</ul>
+<h3 id="2拆分基础组件" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.拆分基础组件<a class="link_3b154 header-anchor" aria-hidden="true" href="#2拆分基础组件">#</a></h3>
+<p class="my-4 leading-7">咱们可以把小黑记事本原有的结构拆成三部分内容：头部（TodoHeader）、列表(TodoMain)、底部(TodoFooter)</p>
+<p class="my-4 leading-7"><img src="/static/image/1682325598418.c71f407c.png" alt="68232559841"/></p>
+<h2 id="十综合案例-列表渲染" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十、综合案例-列表渲染<a class="link_3b154 header-anchor" aria-hidden="true" href="#十综合案例-列表渲染">#</a></h2>
+<p class="my-4 leading-7">思路分析：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">提供数据：提供在公共的父组件 App.vue</li>
+<li class="[&amp;:not(:first-child)]:mt-2">通过父传子，将数据传递给TodoMain</li>
+<li class="[&amp;:not(:first-child)]:mt-2">利用v-for进行渲染</li>
+</ol>
+<h2 id="十一综合案例-添加功能" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十一、综合案例-添加功能<a class="link_3b154 header-anchor" aria-hidden="true" href="#十一综合案例-添加功能">#</a></h2>
+<p class="my-4 leading-7">思路分析：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">收集表单数据  v-model</li>
+<li class="[&amp;:not(:first-child)]:mt-2">监听时间 （回车-点击 都要进行添加）</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子传父，将任务名称传递给父组件App.vue</li>
+<li class="[&amp;:not(:first-child)]:mt-2">父组件接受到数据后 进行添加 <strong class="font-semibold">unshift</strong>(自己的数据自己负责)</li>
+</ol>
+<h2 id="十二综合案例-删除功能" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十二、综合案例-删除功能<a class="link_3b154 header-anchor" aria-hidden="true" href="#十二综合案例-删除功能">#</a></h2>
+<p class="my-4 leading-7">思路分析：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">监听时间（监听删除的点击）携带id</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子传父，将删除的id传递给父组件App.vue</li>
+<li class="[&amp;:not(:first-child)]:mt-2">进行删除 <strong class="font-semibold">filter</strong>  (自己的数据自己负责)</li>
+</ol>
+<h2 id="十三综合案例-底部功能及持久化存储" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十三、综合案例-底部功能及持久化存储<a class="link_3b154 header-anchor" aria-hidden="true" href="#十三综合案例-底部功能及持久化存储">#</a></h2>
+<p class="my-4 leading-7">思路分析：</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">底部合计：父组件传递list到底部组件  —&gt;展示合计</li>
+<li class="[&amp;:not(:first-child)]:mt-2">清空功能：监听事件 —&gt; <strong class="font-semibold">子组件</strong>通知父组件 —&gt;父组件清空</li>
+<li class="[&amp;:not(:first-child)]:mt-2">持久化存储：watch监听数据变化，持久化到本地</li>
+</ol>
+<h2 id="十四非父子通信-event-bus-事件总线" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十四、非父子通信-event bus 事件总线<a class="link_3b154 header-anchor" aria-hidden="true" href="#十四非父子通信-event-bus-事件总线">#</a></h2>
+<h3 id="1作用" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#1作用">#</a></h3>
+<p class="my-4 leading-7">非父子组件之间，进行简易消息传递。(复杂场景→ Vuex)</p>
+<h3 id="2步骤" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.步骤<a class="link_3b154 header-anchor" aria-hidden="true" href="#2步骤">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">创建一个都能访问的事件总线 （空Vue实例）</p>
+<div class="language-js"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-js" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-keyword)">import</span><span> Vue </span><span class="token" style="color:var(--code-token-keyword)">from</span><span> </span><span class="token" style="color:var(--code-token-string)">&#x27;vue&#x27;</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-keyword)">const</span><span> Bus </span><span class="token operator">=</span><span> </span><span class="token" style="color:var(--code-token-keyword)">new</span><span> </span><span class="token class-name">Vue</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-keyword)">export</span><span> </span><span class="token" style="color:var(--code-token-keyword)">default</span><span> Bus</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">A组件（接受方），监听Bus的 $on事件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>created () {
+</span></span><span style="display:block;padding:0 1.25rem">  Bus.$on(&#x27;sendMsg&#x27;, (msg) =&gt; {
+</span><span style="display:block;padding:0 1.25rem">    this.msg = msg
+</span><span style="display:block;padding:0 1.25rem">  })
+</span><span style="display:block;padding:0 1.25rem">}</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">B组件（发送方），触发Bus的$emit事件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>Bus.$emit(&#x27;sendMsg&#x27;, &#x27;这是一个消息&#x27;)</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7"><img src="/static/image/1682328392400.0b52dd49.png" alt="68232839240"/></p>
+</li>
+</ol>
+<h3 id="3代码示例" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#3代码示例">#</a></h3>
+<p class="my-4 leading-7">EventBus.js</p>
+<div class="language-js"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-js" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-keyword)">import</span><span> Vue </span><span class="token" style="color:var(--code-token-keyword)">from</span><span> </span><span class="token" style="color:var(--code-token-string)">&#x27;vue&#x27;</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-keyword)">const</span><span> Bus  </span><span class="token operator">=</span><span>  </span><span class="token" style="color:var(--code-token-keyword)">new</span><span> </span><span class="token class-name">Vue</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-keyword)">export</span><span> </span><span class="token" style="color:var(--code-token-keyword)">default</span><span> Bus</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseA.vue(接受方)</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-a&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    我是A组件（接收方）
+</span><span style="display:block;padding:0 1.25rem">    &lt;p&gt;{{msg}}&lt;/p&gt;  
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import Bus from &#x27;../utils/EventBus&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      msg: &#x27;&#x27;,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-a {
+</span><span style="display:block;padding:0 1.25rem">  width: 200px;
+</span><span style="display:block;padding:0 1.25rem">  height: 200px;
+</span><span style="display:block;padding:0 1.25rem">  border: 3px solid #000;
+</span><span style="display:block;padding:0 1.25rem">  border-radius: 3px;
+</span><span style="display:block;padding:0 1.25rem">  margin: 10px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseB.vue(发送方)</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-b&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div&gt;我是B组件（发布方）&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button&gt;发送消息&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import Bus from &#x27;../utils/EventBus&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-b {
+</span><span style="display:block;padding:0 1.25rem">  width: 200px;
+</span><span style="display:block;padding:0 1.25rem">  height: 200px;
+</span><span style="display:block;padding:0 1.25rem">  border: 3px solid #000;
+</span><span style="display:block;padding:0 1.25rem">  border-radius: 3px;
+</span><span style="display:block;padding:0 1.25rem">  margin: 10px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseA&gt;&lt;/BaseA&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseB&gt;&lt;/BaseB&gt; 
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseA from &#x27;./components/BaseA.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">import BaseB from &#x27;./components/BaseB.vue&#x27; 
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  components:{
+</span><span style="display:block;padding:0 1.25rem">    BaseA,
+</span><span style="display:block;padding:0 1.25rem">    BaseB
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="4总结-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.总结<a class="link_3b154 header-anchor" aria-hidden="true" href="#4总结-1">#</a></h3>
+<p class="my-4 leading-7">1.非父子组件传值借助什么？</p>
+<p class="my-4 leading-7">2.什么是事件总线</p>
+<p class="my-4 leading-7">3.发送方应该调用事件总线的哪个方法</p>
+<p class="my-4 leading-7">4.接收方应该调用事件总线的哪个方法</p>
+<p class="my-4 leading-7">5.一个组件发送数据，可不可以被多个组件接收</p>
+<h2 id="十五非父子通信-provideinject" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十五、非父子通信-provide&amp;inject<a class="link_3b154 header-anchor" aria-hidden="true" href="#十五非父子通信-provideinject">#</a></h2>
+<h3 id="1作用-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#1作用-1">#</a></h3>
+<p class="my-4 leading-7">跨层级共享数据</p>
+<h3 id="2场景" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.场景<a class="link_3b154 header-anchor" aria-hidden="true" href="#2场景">#</a></h3>
+<p class="my-4 leading-7"><img src="/static/image/1682329516878.77ff42d6.png" alt="68232950551"/></p>
+<h3 id="3语法-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#3语法-1">#</a></h3>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">父组件 provide提供数据</li>
+</ol>
+<div class="language-js"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-js" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-keyword)">export</span><span> </span><span class="token" style="color:var(--code-token-keyword)">default</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  </span><span class="token" style="color:var(--code-token-function)">provide</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>    </span><span class="token" style="color:var(--code-token-keyword)">return</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>       </span><span class="token" style="color:var(--code-token-comment)">// 普通类型【非响应式】</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>       </span><span class="token literal-property" style="color:var(--code-token-parameter)">color</span><span class="token operator">:</span><span> </span><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>color</span><span class="token" style="color:var(--code-token-punctuation)">,</span><span> 
+</span></span><span style="display:block;padding:0 1.25rem"><span>       </span><span class="token" style="color:var(--code-token-comment)">// 复杂类型【响应式】</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>       </span><span class="token literal-property" style="color:var(--code-token-parameter)">userInfo</span><span class="token operator">:</span><span> </span><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>userInfo</span><span class="token" style="color:var(--code-token-punctuation)">,</span><span> 
+</span></span><span style="display:block;padding:0 1.25rem"><span>    </span><span class="token" style="color:var(--code-token-punctuation)">}</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  </span><span class="token" style="color:var(--code-token-punctuation)">}</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-punctuation)">}</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">2.子/孙组件 inject获取数据</p>
+<div class="language-js"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-js" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-keyword)">export</span><span> </span><span class="token" style="color:var(--code-token-keyword)">default</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  inject</span><span class="token operator">:</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">[</span><span class="token" style="color:var(--code-token-string)">&#x27;color&#x27;</span><span class="token" style="color:var(--code-token-punctuation)">,</span><span class="token" style="color:var(--code-token-string)">&#x27;userInfo&#x27;</span><span class="token" style="color:var(--code-token-punctuation)">]</span><span class="token" style="color:var(--code-token-punctuation)">,</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  </span><span class="token" style="color:var(--code-token-function)">created</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>    console</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span class="token" style="color:var(--code-token-function)">log</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>color</span><span class="token" style="color:var(--code-token-punctuation)">,</span><span> </span><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>userInfo</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  </span><span class="token" style="color:var(--code-token-punctuation)">}</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-punctuation)">}</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="4注意" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.注意<a class="link_3b154 header-anchor" aria-hidden="true" href="#4注意">#</a></h3>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">provide提供的简单类型的数据不是响应式的，复杂类型数据是响应式。（推荐提供复杂类型数据）</li>
+<li class="[&amp;:not(:first-child)]:mt-2">子/孙组件通过inject获取的数据，不能在自身组件内修改</li>
+</ul>
+<h2 id="十六v-model原理" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十六、v-model原理<a class="link_3b154 header-anchor" aria-hidden="true" href="#十六v-model原理">#</a></h2>
+<h3 id="1原理" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.原理<a class="link_3b154 header-anchor" aria-hidden="true" href="#1原理">#</a></h3>
+<p class="my-4 leading-7">v-model本质上是一个语法糖。例如应用在输入框上，就是value属性 和 input事件 的合写</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div id=&quot;app&quot; &gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;input v-model=&quot;msg&quot; type=&quot;text&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">    &lt;input :value=&quot;msg&quot; @input=&quot;msg = $event.target.value&quot; type=&quot;text&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="2作用-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#2作用-1">#</a></h3>
+<p class="my-4 leading-7">提供数据的双向绑定</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">数据变，视图跟着变 :value</li>
+<li class="[&amp;:not(:first-child)]:mt-2">视图变，数据跟着变 @input</li>
+</ul>
+<h3 id="3注意-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.注意<a class="link_3b154 header-anchor" aria-hidden="true" href="#3注意-1">#</a></h3>
+<p class="my-4 leading-7"><strong class="font-semibold">$event</strong> 用于在模板中，获取事件的形参</p>
+<h3 id="4代码示例" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#4代码示例">#</a></h3>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;input type=&quot;text&quot;  /&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;br /&gt; 
+</span><span style="display:block;padding:0 1.25rem">    &lt;input type=&quot;text&quot; /&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      msg1: &#x27;&#x27;,
+</span><span style="display:block;padding:0 1.25rem">      msg2: &#x27;&#x27;,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt; 
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="5v-model使用在其他表单元素上的原理" class="mt-10 mb-2 leading-7 text-xl title_3b154">5.v-model使用在其他表单元素上的原理<a class="link_3b154 header-anchor" aria-hidden="true" href="#5v-model使用在其他表单元素上的原理">#</a></h3>
+<p class="my-4 leading-7">不同的表单元素， v-model在底层的处理机制是不一样的。比如给checkbox使用v-model</p>
+<p class="my-4 leading-7">底层处理的是 checked属性和change事件。</p>
+<h4 id="不过咱们只需要掌握应用在文本框上的原理即可" class="mt-8 leading-6 text-base title_3b154">不过咱们只需要掌握应用在文本框上的原理即可<a class="link_3b154 header-anchor" aria-hidden="true" href="#不过咱们只需要掌握应用在文本框上的原理即可">#</a></h4>
+<h2 id="十七表单类组件封装" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十七、表单类组件封装<a class="link_3b154 header-anchor" aria-hidden="true" href="#十七表单类组件封装">#</a></h2>
+<h3 id="1需求目标" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.需求目标<a class="link_3b154 header-anchor" aria-hidden="true" href="#1需求目标">#</a></h3>
+<p class="my-4 leading-7">实现子组件和父组件数据的双向绑定 （实现App.vue中的selectId和子组件选中的数据进行双向绑定）</p>
+<h3 id="2代码演示-2" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.代码演示<a class="link_3b154 header-anchor" aria-hidden="true" href="#2代码演示-2">#</a></h3>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseSelect&gt;&lt;/BaseSelect&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseSelect from &#x27;./components/BaseSelect.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      selectId: &#x27;102&#x27;,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    BaseSelect,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseSelect.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;select&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;option value=&quot;101&quot;&gt;北京&lt;/option&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;option value=&quot;102&quot;&gt;上海&lt;/option&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;option value=&quot;103&quot;&gt;武汉&lt;/option&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;option value=&quot;104&quot;&gt;广州&lt;/option&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;option value=&quot;105&quot;&gt;深圳&lt;/option&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;/select&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h2 id="十八v-model简化代码" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十八、v-model简化代码<a class="link_3b154 header-anchor" aria-hidden="true" href="#十八v-model简化代码">#</a></h2>
+<h3 id="1目标" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.目标<a class="link_3b154 header-anchor" aria-hidden="true" href="#1目标">#</a></h3>
+<p class="my-4 leading-7">父组件通过v-model <strong class="font-semibold">简化代码</strong>，实现子组件和父组件数据 <strong class="font-semibold">双向绑定</strong></p>
+<h3 id="2如何简化" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.如何简化<a class="link_3b154 header-anchor" aria-hidden="true" href="#2如何简化">#</a></h3>
+<p class="my-4 leading-7">v-model其实就是 :value和@input事件的简写</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">子组件：props通过value接收数据，事件触发 input</li>
+<li class="[&amp;:not(:first-child)]:mt-2">父组件：v-model直接绑定数据</li>
+</ul>
+<h3 id="3代码示例-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#3代码示例-1">#</a></h3>
+<p class="my-4 leading-7">子组件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;select :value=&quot;value&quot; @change=&quot;handleChange&quot;&gt;...&lt;/select&gt;
+</span></span><span style="display:block;padding:0 1.25rem">props: {
+</span><span style="display:block;padding:0 1.25rem">  value: String
+</span><span style="display:block;padding:0 1.25rem">},
+</span><span style="display:block;padding:0 1.25rem">methods: {
+</span><span style="display:block;padding:0 1.25rem">  handleChange (e) {
+</span><span style="display:block;padding:0 1.25rem">    this.$emit(&#x27;input&#x27;, e.target.value)
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">}</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">父组件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;BaseSelect v-model=&quot;selectId&quot;&gt;&lt;/BaseSelect&gt;</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h2 id="十九sync修饰符" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">十九、.sync修饰符<a class="link_3b154 header-anchor" aria-hidden="true" href="#十九sync修饰符">#</a></h2>
+<h3 id="1作用-2" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#1作用-2">#</a></h3>
+<p class="my-4 leading-7">可以实现 <strong class="font-semibold">子组件</strong> 与 <strong class="font-semibold">父组件数据</strong> 的 <strong class="font-semibold">双向绑定</strong>，简化代码</p>
+<p class="my-4 leading-7">简单理解：<strong class="font-semibold">子组件可以修改父组件传过来的props值</strong></p>
+<h3 id="2场景-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.场景<a class="link_3b154 header-anchor" aria-hidden="true" href="#2场景-1">#</a></h3>
+<p class="my-4 leading-7">封装弹框类的基础组件， visible属性 true显示 false隐藏</p>
+<h3 id="3本质" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.本质<a class="link_3b154 header-anchor" aria-hidden="true" href="#3本质">#</a></h3>
+<p class="my-4 leading-7">.sync修饰符 就是 <strong class="font-semibold">:属性名</strong> 和 <strong class="font-semibold">@update:属性名</strong> 合写</p>
+<h3 id="4语法" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#4语法">#</a></h3>
+<p class="my-4 leading-7">父组件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>//.sync写法
+</span></span><span style="display:block;padding:0 1.25rem">&lt;BaseDialog :visible.sync=&quot;isShow&quot; /&gt;
+</span><span style="display:block;padding:0 1.25rem">--------------------------------------
+</span><span style="display:block;padding:0 1.25rem">//完整写法
+</span><span style="display:block;padding:0 1.25rem">&lt;BaseDialog 
+</span><span style="display:block;padding:0 1.25rem">  :visible=&quot;isShow&quot; 
+</span><span style="display:block;padding:0 1.25rem">  @update:visible=&quot;isShow = $event&quot; 
+</span><span style="display:block;padding:0 1.25rem">/&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">子组件</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>props: {
+</span></span><span style="display:block;padding:0 1.25rem">  visible: Boolean
+</span><span style="display:block;padding:0 1.25rem">},
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">this.$emit(&#x27;update:visible&#x27;, false)</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="5代码示例" class="mt-10 mb-2 leading-7 text-xl title_3b154">5.代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#5代码示例">#</a></h3>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;button @click=&quot;openDialog&quot;&gt;退出按钮&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseDialog :isShow=&quot;isShow&quot;&gt;&lt;/BaseDialog&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseDialog from &#x27;./components/BaseDialog.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      isShow: false,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  components: {
+</span><span style="display:block;padding:0 1.25rem">    BaseDialog,
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseDialog.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-dialog-wrap&quot; v-show=&quot;isShow&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div class=&quot;base-dialog&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;div class=&quot;title&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">        &lt;h3&gt;温馨提示：&lt;/h3&gt;
+</span><span style="display:block;padding:0 1.25rem">        &lt;button class=&quot;close&quot;&gt;x&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;div class=&quot;content&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">        &lt;p&gt;你确认要退出本系统么？&lt;/p&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;div class=&quot;footer&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">        &lt;button&gt;确认&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">        &lt;button&gt;取消&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  props: {
+</span><span style="display:block;padding:0 1.25rem">    isShow: Boolean,
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-dialog-wrap {
+</span><span style="display:block;padding:0 1.25rem">  width: 300px;
+</span><span style="display:block;padding:0 1.25rem">  height: 200px;
+</span><span style="display:block;padding:0 1.25rem">  box-shadow: 2px 2px 2px 2px #ccc;
+</span><span style="display:block;padding:0 1.25rem">  position: fixed;
+</span><span style="display:block;padding:0 1.25rem">  left: 50%;
+</span><span style="display:block;padding:0 1.25rem">  top: 50%;
+</span><span style="display:block;padding:0 1.25rem">  transform: translate(-50%, -50%);
+</span><span style="display:block;padding:0 1.25rem">  padding: 0 10px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.base-dialog .title {
+</span><span style="display:block;padding:0 1.25rem">  display: flex;
+</span><span style="display:block;padding:0 1.25rem">  justify-content: space-between;
+</span><span style="display:block;padding:0 1.25rem">  align-items: center;
+</span><span style="display:block;padding:0 1.25rem">  border-bottom: 2px solid #000;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.base-dialog .content {
+</span><span style="display:block;padding:0 1.25rem">  margin-top: 38px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.base-dialog .title .close {
+</span><span style="display:block;padding:0 1.25rem">  width: 20px;
+</span><span style="display:block;padding:0 1.25rem">  height: 20px;
+</span><span style="display:block;padding:0 1.25rem">  cursor: pointer;
+</span><span style="display:block;padding:0 1.25rem">  line-height: 10px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.footer {
+</span><span style="display:block;padding:0 1.25rem">  display: flex;
+</span><span style="display:block;padding:0 1.25rem">  justify-content: flex-end;
+</span><span style="display:block;padding:0 1.25rem">  margin-top: 26px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.footer button {
+</span><span style="display:block;padding:0 1.25rem">  width: 80px;
+</span><span style="display:block;padding:0 1.25rem">  height: 40px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">.footer button:nth-child(1) {
+</span><span style="display:block;padding:0 1.25rem">  margin-right: 10px;
+</span><span style="display:block;padding:0 1.25rem">  cursor: pointer;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="6总结" class="mt-10 mb-2 leading-7 text-xl title_3b154">6.总结<a class="link_3b154 header-anchor" aria-hidden="true" href="#6总结">#</a></h3>
+<p class="my-4 leading-7">1.父组件如果想让子组件修改传过去的值 必须加什么修饰符？</p>
+<p class="my-4 leading-7">2.子组件要修改父组件的props值 必须使用什么语法？</p>
+<h2 id="二十ref和refs" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">二十、ref和$refs<a class="link_3b154 header-anchor" aria-hidden="true" href="#二十ref和refs">#</a></h2>
+<h3 id="1作用-3" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.作用<a class="link_3b154 header-anchor" aria-hidden="true" href="#1作用-3">#</a></h3>
+<p class="my-4 leading-7">利用ref 和 $refs 可以用于 获取 dom 元素 或 组件实例</p>
+<h3 id="2特点" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.特点<a class="link_3b154 header-anchor" aria-hidden="true" href="#2特点">#</a></h3>
+<p class="my-4 leading-7">查找范围 →  当前组件内(更精确稳定)</p>
+<h3 id="3语法-2" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.语法<a class="link_3b154 header-anchor" aria-hidden="true" href="#3语法-2">#</a></h3>
+<p class="my-4 leading-7">1.给要获取的盒子添加ref属性</p>
+<div class="language-html"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-html" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-punctuation)">&lt;</span><span class="token" style="color:var(--code-token-function)">div</span><span class="token" style="color:var(--code-token-function)"> </span><span class="token" style="color:var(--code-token-symbol)">ref</span><span class="token attr-equals" style="color:var(--code-token-punctuation)">=</span><span class="token" style="color:var(--code-token-punctuation)">&quot;</span><span class="token" style="color:var(--code-token-string-expression)">chartRef</span><span class="token" style="color:var(--code-token-punctuation)">&quot;</span><span class="token" style="color:var(--code-token-punctuation)">&gt;</span><span>我是渲染图表的容器</span><span class="token" style="color:var(--code-token-punctuation)">&lt;/</span><span class="token" style="color:var(--code-token-function)">div</span><span class="token" style="color:var(--code-token-punctuation)">&gt;</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">2.获取时通过 $refs获取  this.$refs.chartRef 获取</p>
+<div class="language-html"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-html" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>mounted () {
+</span></span><span style="display:block;padding:0 1.25rem">  console.log(this.$refs.chartRef)
+</span><span style="display:block;padding:0 1.25rem">}</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="4注意-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.注意<a class="link_3b154 header-anchor" aria-hidden="true" href="#4注意-1">#</a></h3>
+<p class="my-4 leading-7">之前只用document.querySelect(&#x27;.box&#x27;) 获取的是整个页面中的盒子</p>
+<h3 id="5代码示例-1" class="mt-10 mb-2 leading-7 text-xl title_3b154">5.代码示例<a class="link_3b154 header-anchor" aria-hidden="true" href="#5代码示例-1">#</a></h3>
+<p class="my-4 leading-7">App.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;BaseChart&gt;&lt;/BaseChart&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">import BaseChart from &#x27;./components/BaseChart.vue&#x27;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  components:{
+</span><span style="display:block;padding:0 1.25rem">    BaseChart
+</span><span style="display:block;padding:0 1.25rem">  }
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7">BaseChart.vue</p>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;base-chart-box&quot; ref=&quot;baseChartBox&quot;&gt;子组件&lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">// yarn add echarts 或者 npm i echarts
+</span><span style="display:block;padding:0 1.25rem">import * as echarts from &#x27;echarts&#x27;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  mounted() {
+</span><span style="display:block;padding:0 1.25rem">    // 基于准备好的dom，初始化echarts实例
+</span><span style="display:block;padding:0 1.25rem">    var myChart = echarts.init(document.querySelect(&#x27;.base-chart-box&#x27;))
+</span><span style="display:block;padding:0 1.25rem">    // 绘制图表
+</span><span style="display:block;padding:0 1.25rem">    myChart.setOption({
+</span><span style="display:block;padding:0 1.25rem">      title: {
+</span><span style="display:block;padding:0 1.25rem">        text: &#x27;ECharts 入门示例&#x27;,
+</span><span style="display:block;padding:0 1.25rem">      },
+</span><span style="display:block;padding:0 1.25rem">      tooltip: {},
+</span><span style="display:block;padding:0 1.25rem">      xAxis: {
+</span><span style="display:block;padding:0 1.25rem">        data: [&#x27;衬衫&#x27;, &#x27;羊毛衫&#x27;, &#x27;雪纺衫&#x27;, &#x27;裤子&#x27;, &#x27;高跟鞋&#x27;, &#x27;袜子&#x27;],
+</span><span style="display:block;padding:0 1.25rem">      },
+</span><span style="display:block;padding:0 1.25rem">      yAxis: {},
+</span><span style="display:block;padding:0 1.25rem">      series: [
+</span><span style="display:block;padding:0 1.25rem">        {
+</span><span style="display:block;padding:0 1.25rem">          name: &#x27;销量&#x27;,
+</span><span style="display:block;padding:0 1.25rem">          type: &#x27;bar&#x27;,
+</span><span style="display:block;padding:0 1.25rem">          data: [5, 20, 36, 10, 10, 20],
+</span><span style="display:block;padding:0 1.25rem">        },
+</span><span style="display:block;padding:0 1.25rem">      ],
+</span><span style="display:block;padding:0 1.25rem">    })
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;style scoped&gt;
+</span><span style="display:block;padding:0 1.25rem">.base-chart-box {
+</span><span style="display:block;padding:0 1.25rem">  width: 400px;
+</span><span style="display:block;padding:0 1.25rem">  height: 300px;
+</span><span style="display:block;padding:0 1.25rem">  border: 3px solid #000;
+</span><span style="display:block;padding:0 1.25rem">  border-radius: 6px;
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/style&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h2 id="二十一异步更新--nexttick" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_3b154">二十一、异步更新 &amp; $nextTick<a class="link_3b154 header-anchor" aria-hidden="true" href="#二十一异步更新--nexttick">#</a></h2>
+<h3 id="1需求" class="mt-10 mb-2 leading-7 text-xl title_3b154">1.需求<a class="link_3b154 header-anchor" aria-hidden="true" href="#1需求">#</a></h3>
+<p class="my-4 leading-7">编辑标题,  编辑框自动聚焦</p>
+<ol class="list-decimal pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">点击编辑，显示编辑框</li>
+<li class="[&amp;:not(:first-child)]:mt-2">让编辑框，立刻获取焦点</li>
+</ol>
+<p class="my-4 leading-7"><img src="/static/image/1682394495346.6d04de5f.png" alt="68239449534"/></p>
+<h3 id="2代码实现" class="mt-10 mb-2 leading-7 text-xl title_3b154">2.代码实现<a class="link_3b154 header-anchor" aria-hidden="true" href="#2代码实现">#</a></h3>
+<div class="language-vue"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-vue" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span>&lt;template&gt;
+</span></span><span style="display:block;padding:0 1.25rem">  &lt;div class=&quot;app&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div v-if=&quot;isShowEdit&quot;&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;input type=&quot;text&quot; v-model=&quot;editValue&quot; ref=&quot;inp&quot; /&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;button&gt;确认&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;div v-else&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;span&gt;{{ title }}&lt;/span&gt;
+</span><span style="display:block;padding:0 1.25rem">      &lt;button @click=&quot;editFn&quot;&gt;编辑&lt;/button&gt;
+</span><span style="display:block;padding:0 1.25rem">    &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">  &lt;/div&gt;
+</span><span style="display:block;padding:0 1.25rem">&lt;/template&gt;
+</span><span style="display:block;padding:0 1.25rem">
+</span><span style="display:block;padding:0 1.25rem">&lt;script&gt;
+</span><span style="display:block;padding:0 1.25rem">export default {
+</span><span style="display:block;padding:0 1.25rem">  data() {
+</span><span style="display:block;padding:0 1.25rem">    return {
+</span><span style="display:block;padding:0 1.25rem">      title: &#x27;大标题&#x27;,
+</span><span style="display:block;padding:0 1.25rem">      isShowEdit: false,
+</span><span style="display:block;padding:0 1.25rem">      editValue: &#x27;&#x27;,
+</span><span style="display:block;padding:0 1.25rem">    }
+</span><span style="display:block;padding:0 1.25rem">  },
+</span><span style="display:block;padding:0 1.25rem">  methods: {
+</span><span style="display:block;padding:0 1.25rem">    editFn() {
+</span><span style="display:block;padding:0 1.25rem">        // 显示输入框
+</span><span style="display:block;padding:0 1.25rem">        this.isShowEdit = true  
+</span><span style="display:block;padding:0 1.25rem">        // 获取焦点
+</span><span style="display:block;padding:0 1.25rem">        this.$refs.inp.focus() 
+</span><span style="display:block;padding:0 1.25rem">    }  },
+</span><span style="display:block;padding:0 1.25rem">}
+</span><span style="display:block;padding:0 1.25rem">&lt;/script&gt;</span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<h3 id="3问题" class="mt-10 mb-2 leading-7 text-xl title_3b154">3.问题<a class="link_3b154 header-anchor" aria-hidden="true" href="#3问题">#</a></h3>
+<p class="my-4 leading-7">&quot;显示之后&quot;，立刻获取焦点是不能成功的！</p>
+<p class="my-4 leading-7">原因：Vue 是异步更新DOM  (提升性能)</p>
+<h3 id="4解决方案" class="mt-10 mb-2 leading-7 text-xl title_3b154">4.解决方案<a class="link_3b154 header-anchor" aria-hidden="true" href="#4解决方案">#</a></h3>
+<p class="my-4 leading-7">$nextTick：<strong class="font-semibold">等 DOM更新后</strong>,才会触发执行此方法里的函数体</p>
+<p class="my-4 leading-7"><strong class="font-semibold">语法:</strong> this.$nextTick(函数体)</p>
+<div class="language-js"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-js" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span class="token" style="color:var(--code-token-function)">$nextTick</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span> </span><span class="token operator">=&gt;</span><span> </span><span class="token" style="color:var(--code-token-punctuation)">{</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span>  </span><span class="token" style="color:var(--code-token-keyword)">this</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>$refs</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span>inp</span><span class="token" style="color:var(--code-token-punctuation)">.</span><span class="token" style="color:var(--code-token-function)">focus</span><span class="token" style="color:var(--code-token-punctuation)">(</span><span class="token" style="color:var(--code-token-punctuation)">)</span><span>
+</span></span><span style="display:block;padding:0 1.25rem"><span></span><span class="token" style="color:var(--code-token-punctuation)">}</span><span class="token" style="color:var(--code-token-punctuation)">)</span></span></code></pre></div><div class="code-button-group_15153"><button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_15153"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_15153"><path fill="currentColor" d="M16 7H3V5h13v2M3 19h13v-2H3v2m19-7-4-3v2H3v2h15v2l4-3Z"></path></svg></button><button class="code-copy-button_15153"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_15153"><path fill="currentColor" d="M28 10v18H10V10h18m0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Z"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_15153"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9 13 24z"></path></svg></button></div></div></div>
+<p class="my-4 leading-7"><strong class="font-semibold">注意：</strong>$nextTick 内的函数体 一定是<strong class="font-semibold">箭头函数</strong>，这样才能让函数内部的this指向Vue实例</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_e7091 flex flex-col"><a class="link_03735 pager-link_9b9a7 cursor-pointer" target="" href="/vue/day03/day03.html"><span class="desc_9b9a7">Previous Page</span><span class="title_9b9a7">day03</span></a></div><div class="next_e7091 flex flex-col"><a class="link_03735 pager-link_9b9a7 next_9b9a7 cursor-pointer" target="" href="/vue/day05/day05.html"><span class="desc_9b9a7">Next page</span><span class="title_9b9a7">day05</span></a></div></div></footer></div></div></div><div class="aside-container_edeb4"><div><div class="flex flex-col"><div class="&lt;lg:hidden"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#一学习目标" title="一、学习目标" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">一、学习目标</span></a></li><li><a href="#1组件的三大组成部分结构样式逻辑" title="1.组件的三大组成部分（结构/样式/逻辑）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.组件的三大组成部分（结构/样式/逻辑）</span></a></li><li><a href="#2组件通信" title="2.组件通信" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.组件通信</span></a></li><li><a href="#3综合案例小黑记事本组件版" title="3.综合案例：小黑记事本（组件版）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.综合案例：小黑记事本（组件版）</span></a></li><li><a href="#4进阶语法" title="4.进阶语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.进阶语法</span></a></li><li><a href="#二scoped解决样式冲突" title="二、scoped解决样式冲突" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">二、scoped解决样式冲突</span></a></li><li><a href="#1默认情况" title="1.默认情况" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block"><strong>1.默认情况</strong></span></a></li><li><a href="#2代码演示" title="2.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.代码演示</span></a></li><li><a href="#3scoped原理" title="3.scoped原理" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.scoped原理</span></a></li><li><a href="#4总结" title="4.总结" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.总结</span></a></li><li><a href="#三data必须是一个函数" title="三、data必须是一个函数" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">三、data必须是一个函数</span></a></li><li><a href="#1data为什么要写成函数" title="1、data为什么要写成函数" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1、data为什么要写成函数</span></a></li><li><a href="#2代码演示-1" title="2.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.代码演示</span></a></li><li><a href="#3总结" title="3.总结" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.总结</span></a></li><li><a href="#四组件通信" title="四、组件通信" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">四、组件通信</span></a></li><li><a href="#1什么是组件通信" title="1.什么是组件通信？" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.什么是组件通信？</span></a></li><li><a href="#2组件之间如何通信" title="2.组件之间如何通信" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.组件之间如何通信</span></a></li><li><a href="#3组件关系分类" title="3.组件关系分类" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.组件关系分类</span></a></li><li><a href="#4通信解决方案" title="4.通信解决方案" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.通信解决方案</span></a></li><li><a href="#5父子通信流程" title="5.父子通信流程" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">5.父子通信流程</span></a></li><li><a href="#6父向子通信代码示例" title="6.父向子通信代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">6.父向子通信代码示例</span></a></li><li><a href="#7子向父通信代码示例" title="7.子向父通信代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">7.子向父通信代码示例</span></a></li><li><a href="#8总结" title="8.总结" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">8.总结</span></a></li><li><a href="#五什么是props" title="五、什么是props" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">五、什么是props</span></a></li><li><a href="#1props-定义" title="1.Props 定义" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.Props 定义</span></a></li><li><a href="#2props-作用" title="2.Props 作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.Props 作用</span></a></li><li><a href="#3特点" title="3.特点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.特点</span></a></li><li><a href="#4代码演示" title="4.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.代码演示</span></a></li><li><a href="#六props校验" title="六、props校验" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">六、props校验</span></a></li><li><a href="#1思考" title="1.思考" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.思考</span></a></li><li><a href="#2作用" title="2.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.作用</span></a></li><li><a href="#3语法" title="3.语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.语法</span></a></li><li><a href="#4代码演示-1" title="4.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.代码演示</span></a></li><li><a href="#七props校验完整写法" title="七、props校验完整写法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">七、props校验完整写法</span></a></li><li><a href="#1语法" title="1.语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.语法</span></a></li><li><a href="#2代码实例" title="2.代码实例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.代码实例</span></a></li><li><a href="#3注意" title="3.注意" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.注意</span></a></li><li><a href="#八propsdata单向数据流" title="八、props&amp;data、单向数据流" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">八、props&amp;data、单向数据流</span></a></li><li><a href="#1共同点" title="1.共同点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.共同点</span></a></li><li><a href="#2区别" title="2.区别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.区别</span></a></li><li><a href="#3单向数据流" title="3.单向数据流" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.单向数据流</span></a></li><li><a href="#4代码演示-2" title="4.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.代码演示</span></a></li><li><a href="#5口诀" title="5.口诀" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">5.口诀</span></a></li><li><a href="#谁的数据谁负责" title="谁的数据谁负责" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:24px;font-weight:semibold"><span class="aside-link-text block">谁的数据谁负责</span></a></li><li><a href="#九综合案例-组件拆分" title="九、综合案例-组件拆分" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">九、综合案例-组件拆分</span></a></li><li><a href="#1需求说明" title="1.需求说明" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.需求说明</span></a></li><li><a href="#2拆分基础组件" title="2.拆分基础组件" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.拆分基础组件</span></a></li><li><a href="#十综合案例-列表渲染" title="十、综合案例-列表渲染" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十、综合案例-列表渲染</span></a></li><li><a href="#十一综合案例-添加功能" title="十一、综合案例-添加功能" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十一、综合案例-添加功能</span></a></li><li><a href="#十二综合案例-删除功能" title="十二、综合案例-删除功能" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十二、综合案例-删除功能</span></a></li><li><a href="#十三综合案例-底部功能及持久化存储" title="十三、综合案例-底部功能及持久化存储" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十三、综合案例-底部功能及持久化存储</span></a></li><li><a href="#十四非父子通信-event-bus-事件总线" title="十四、非父子通信-event bus 事件总线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十四、非父子通信-event bus 事件总线</span></a></li><li><a href="#1作用" title="1.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.作用</span></a></li><li><a href="#2步骤" title="2.步骤" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.步骤</span></a></li><li><a href="#3代码示例" title="3.代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.代码示例</span></a></li><li><a href="#4总结-1" title="4.总结" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.总结</span></a></li><li><a href="#十五非父子通信-provideinject" title="十五、非父子通信-provide&amp;inject" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十五、非父子通信-provide&amp;inject</span></a></li><li><a href="#1作用-1" title="1.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.作用</span></a></li><li><a href="#2场景" title="2.场景" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.场景</span></a></li><li><a href="#3语法-1" title="3.语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.语法</span></a></li><li><a href="#4注意" title="4.注意" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.注意</span></a></li><li><a href="#十六v-model原理" title="十六、v-model原理" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十六、v-model原理</span></a></li><li><a href="#1原理" title="1.原理" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.原理</span></a></li><li><a href="#2作用-1" title="2.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.作用</span></a></li><li><a href="#3注意-1" title="3.注意" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.注意</span></a></li><li><a href="#4代码示例" title="4.代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.代码示例</span></a></li><li><a href="#5v-model使用在其他表单元素上的原理" title="5.v-model使用在其他表单元素上的原理" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">5.v-model使用在其他表单元素上的原理</span></a></li><li><a href="#不过咱们只需要掌握应用在文本框上的原理即可" title="不过咱们只需要掌握应用在文本框上的原理即可" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:24px;font-weight:semibold"><span class="aside-link-text block">不过咱们只需要掌握应用在文本框上的原理即可</span></a></li><li><a href="#十七表单类组件封装" title="十七、表单类组件封装" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十七、表单类组件封装</span></a></li><li><a href="#1需求目标" title="1.需求目标" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.需求目标</span></a></li><li><a href="#2代码演示-2" title="2.代码演示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.代码演示</span></a></li><li><a href="#十八v-model简化代码" title="十八、v-model简化代码" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十八、v-model简化代码</span></a></li><li><a href="#1目标" title="1.目标" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.目标</span></a></li><li><a href="#2如何简化" title="2.如何简化" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.如何简化</span></a></li><li><a href="#3代码示例-1" title="3.代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.代码示例</span></a></li><li><a href="#十九sync修饰符" title="十九、.sync修饰符" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">十九、.sync修饰符</span></a></li><li><a href="#1作用-2" title="1.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.作用</span></a></li><li><a href="#2场景-1" title="2.场景" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.场景</span></a></li><li><a href="#3本质" title="3.本质" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.本质</span></a></li><li><a href="#4语法" title="4.语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.语法</span></a></li><li><a href="#5代码示例" title="5.代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">5.代码示例</span></a></li><li><a href="#6总结" title="6.总结" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">6.总结</span></a></li><li><a href="#二十ref和refs" title="二十、ref和$refs" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">二十、ref和$refs</span></a></li><li><a href="#1作用-3" title="1.作用" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.作用</span></a></li><li><a href="#2特点" title="2.特点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.特点</span></a></li><li><a href="#3语法-2" title="3.语法" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.语法</span></a></li><li><a href="#4注意-1" title="4.注意" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.注意</span></a></li><li><a href="#5代码示例-1" title="5.代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">5.代码示例</span></a></li><li><a href="#二十一异步更新--nexttick" title="二十一、异步更新 &amp; $nextTick" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:0;font-weight:semibold"><span class="aside-link-text block">二十一、异步更新 &amp; $nextTick</span></a></li><li><a href="#1需求" title="1.需求" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">1.需求</span></a></li><li><a href="#2代码实现" title="2.代码实现" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">2.代码实现</span></a></li><li><a href="#3问题" title="3.问题" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">3.问题</span></a></li><li><a href="#4解决方案" title="4.解决方案" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="padding-left:12px;font-weight:semibold"><span class="aside-link-text block">4.解决方案</span></a></li></ul></nav></div></div></div></div></div></div></div></section></div></div><div id="search-container"></div></body></html>
